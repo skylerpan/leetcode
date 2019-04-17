@@ -1,4 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+#define ARRAY_SIZE(arr)    (sizeof(arr) / sizeof((arr)[0]))
 
 int removeDuplicates(int* nums, int numsSize) {
     int ans_idx, chk_idx;
@@ -15,4 +18,18 @@ int removeDuplicates(int* nums, int numsSize) {
     }
 
     return ans_idx + 1;
+}
+
+int main(void)
+{
+    int nums[10] = {0,0,1,1,1,2,2,3,3,4};
+    // nums is passed in by reference. (i.e., without making a copy)
+    int len = removeDuplicates(nums, ARRAY_SIZE(nums));
+
+    // any modification to nums in your function would be known by the caller.
+    // using the length returned by your function, it prints the first len elements.
+    for (int i = 0; i < len; i++) {
+        printf("%d ",nums[i]);
+    }
+    return 0;
 }
