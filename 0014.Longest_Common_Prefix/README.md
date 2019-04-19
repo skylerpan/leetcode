@@ -1,0 +1,1 @@
+1. Advanced: solve it without "strlen".
