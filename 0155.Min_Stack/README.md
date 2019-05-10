@@ -6,3 +6,5 @@ Erase the last element.
 ```c++
 myvector.erase(myvector.end()-1);
 ```
+Runtime: 32 ms<br>
+Memory Usage: 17.3 MB
