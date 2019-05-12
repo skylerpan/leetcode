@@ -11,19 +11,19 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        ListNode *quicker, *slower;
-        quicker = slower = head;
+        ListNode *quick, *slow;
+        quick = slow = head;
         
         do{
-            if(quicker && quicker->next)
-                quicker = quicker->next->next;
+            if(quick && quick->next)
+                quick = quick->next->next;
             else
                 return false;
-            if(slower)
-                slower = slower->next;
+            if(slow)
+                slow = slow->next;
             else
                 return false;
-        }while(quicker != slower);
+        }while(quick != slow);
         
         return true;
     }
@@ -32,28 +32,28 @@ public:
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        ListNode *quicker, *slower;
-        quicker = slower = head;
+        ListNode *quick, *slow;
+        quick = slow = head;
         
         do {
-            if(quicker && quicker->next)
-                quicker = quicker->next->next;
+            if(quick && quick->next)
+                quick = quick->next->next;
             else
                 return false;
-            if(slower)
-                slower = slower->next;
+            if(slow)
+                slow = slow->next;
             else
                 return false;
-        }while(quicker != slower);
+        }while(quick != slow);
         
-        slower = head;
+        slow = head;
         
-        while(quicker != slower){
-            quicker = quicker->next;
-            slower  = slower->next;
+        while(quick != slow){
+            quick = quick->next;
+            slow  = slow->next;
         }
         
-        return quicker; // find the cycle's first node.
+        return quick; // find the cycle's first node.
     }
 };
 #endif

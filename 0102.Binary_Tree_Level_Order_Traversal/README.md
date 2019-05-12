@@ -1,4 +1,7 @@
-# Level traversal 
+## Level order
+1. Use DFS and multi-vectors to set level order.
+
+## Level traversal 
 1.  Vectors's vector needs to process the first vector when vectors is empty.
 2.  Use multi-queue with depth as index to group the answer's set.
 *  Example 
