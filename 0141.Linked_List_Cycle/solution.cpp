@@ -48,10 +48,10 @@ public:
         
         slower = head;
         
-        do {
+        while(quicker != slower){
             quicker = quicker->next;
             slower  = slower->next;
-        }while(quicker != slower);
+        }
         
         return quicker; // find the cycle's first node.
     }
