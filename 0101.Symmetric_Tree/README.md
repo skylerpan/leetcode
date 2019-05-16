@@ -1,0 +1,2 @@
+1.  Traverse two direction at the same time and compare their value.
+2.  Use pre-order traversal method: left-side-> VLR(visiting -> left child -> right child) & right-side VRL(visiting -> right child -> left child)
