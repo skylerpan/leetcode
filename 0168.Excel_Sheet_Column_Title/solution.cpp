@@ -4,11 +4,10 @@ class Solution {
 public:
     string convertToTitle(int n) {
         string ans = {""};
-        if(n == 0) return ans;
-        do {
+        while(n) {
             ans += 'A'+ ((--n) % ALPHABET);
             n /= ALPHABET;
-        } while(n);
+        }
         reverse(ans.begin(), ans.end());
         return ans;
     }
