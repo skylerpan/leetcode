@@ -32,7 +32,7 @@ int numJewelsInStones(char* J, char* S) {
         idx[FST] = idx[BS];
         idx[END] = idx[BS];
 
-        while(I_Have[idx[FST]-1] == J[0]) {
+        while(idx[FST] > 0 && (I_Have[idx[FST]-1] == J[0])) {
             idx[FST]--;
         }
 
