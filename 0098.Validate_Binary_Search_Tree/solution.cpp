@@ -10,7 +10,7 @@
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        int last_value = INT_MIN;
+        int last_value;
         bool unreached_leaf = true;
         if(!root)
             return true;
@@ -23,19 +23,15 @@ public:
                 return false;
         }
         if(unreached_leaf)
-        {
             unreached_leaf = false;
-        }
-        else 
-        if(last_value >= node->val)
-            return false;
+        else
+            if(last_value >= node->val)
+                return false;
         last_value = node->val;
-
         if(node->right) {
             if(dfs_r(node->right, last_value, unreached_leaf) == false)
                 return false;
         }
-
         return true;
     }
 };
