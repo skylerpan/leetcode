@@ -13,16 +13,12 @@ public:
         return mergeTrees_r(t1, t2);
     }
     TreeNode* mergeTrees_r(TreeNode* t1, TreeNode* t2) {
-        if(!t1 && !t2) {
+        if(!t1 && !t2)
             return NULL;
-        }
-        else if(!t1) {
-            swap(t1, t2);
+        else if(!t1) 
+            return t2;
+        else if(!t2)
             return t1;
-        }
-        else if(!t2){
-            return t1;
-        }
         t1->val += t2->val;
         t1->left = mergeTrees_r(t1->left, t2->left);
         t1->right = mergeTrees_r(t1->right, t2->right);
