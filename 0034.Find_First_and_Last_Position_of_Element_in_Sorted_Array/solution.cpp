@@ -20,7 +20,6 @@ public:
     int binary_search(vector<int> *nums, int start, int end, int target, int l)
     {
         int n = end - start;
-    
         if(n == 0) {
             if((*nums)[start] == target)
                 return start;
@@ -38,13 +37,12 @@ public:
                 else
                     return binary_search(nums, start + (n/2) + 1, end, target, l);
             }
-            
         }
-        if((*nums)[start + n/2] > target){
+        if((*nums)[start + n/2] > target) {
             //cout << "--[" << start <<","<< start + n/2 << "]" << endl;
             return binary_search(nums, start, start + (n/2), target, l);
         }
-        else{
+        else {
             //cout << "++[" << start + (n/2) +1<<","<< end << "]" << endl;
             return binary_search(nums, start + (n/2) +1, end, target, l);
         }
@@ -56,8 +54,8 @@ private:
 int main()
 {
     Solution s;
-    //vector<int> nums = {5,7,7,8,8,10};
-    vector<int> nums = {8,8,8,8,8,8};
+    vector<int> nums = {5,7,7,8,8,10};
+    //vector<int> nums = {8,8,8,8,8,8};
     vector<int> res = s.searchRange(nums, 7);
     cout << res[0] << " "<< res[1] << endl;
 }
